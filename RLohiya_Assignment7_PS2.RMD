@@ -1,0 +1,85 @@
+---
+title: "Data605_Assignment7_PS2"
+author: "Ritesh Lohiya"
+date: "October 13, 2018"
+output: html_document
+---
+
+#                             ASSIGNMENT 7 PS2
+
+#           IS 605 FUNDAMENTALS OF COMPUTATIONAL MATHEMATICS
+
+
+Your organization owns a copier (future lawyers, etc.) or MRI (future doctors). This machine has a manufacturer's expected lifetime of 10 years. This means that we expect one failure every ten years. (Include the probability statements and R Code for each part.).
+
+a. What is the probability that the machine will fail after 8 years?. Provide also the expected value and standard deviation. Model as a geometric. (Hint: the probability is equivalent to not failing during the first 8 years..)
+
+```{r}
+#Probability
+round(pgeom(8, .1, lower.tail = FALSE),2)
+```
+
+```{r}
+#Expected value
+1/.1
+```
+
+```{r}
+#Standard deviation
+round(sqrt((1-.1)/(.1^2)),2)
+```
+
+b. What is the probability that the machine will fail after 8 years?. Provide also the expected value and standard deviation. Model as an exponential.
+
+```{r}
+#Probability
+round(pexp(8, .1, lower.tail = FALSE),2)
+```
+
+```{r}
+#Expected value
+1/.1
+```
+
+```{r}
+#Standard deviation
+round(sqrt((1-.1)/(.1^2)),2)
+```
+
+c. What is the probability that the machine will fail after 8 years?. Provide also the expected value and standard deviation. Model as a binomial. (Hint: 0 success in 8 years)
+
+```{r}
+#Probability
+round(pbinom(0, 8, .1 ),2)
+```
+
+```{r}
+#Expected value
+.1*8
+```
+
+```{r}
+#Standard deviation
+round(sqrt(8*.1*(1 - .1)),2)
+```
+
+d. What is the probability that the machine will fail after 8 years?. Provide also the expected value and standard deviation. Model as a Poisson.
+
+```{r}
+#Probability
+round(pexp(8, .1, lower.tail = FALSE),2)
+```
+
+```{r}
+#Expected value
+.1*8
+```
+
+```{r}
+#Standard deviation
+round(sqrt(8*.1),2)
+```
+
+
+
+
